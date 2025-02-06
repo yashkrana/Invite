@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 20px;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #ff3333;
+        }
+        img, video {
+            width: 300px;
+            height: auto;
+            margin: 20px;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome" class="container">
+        <h1>Hey Tanisha shawty, I Have a Question for You 😼😼😼</h1>
+        <img src="034.gif" alt="question gif">
+        <button onclick="showNext('moments')">Next</button>
+    </div>
+
+    <div id="moments" class="container hidden">
+        <h2>We've shared so many moments together!</h2>
+        <h3>POV: this is how i see YOUU [khi khi khi]</h3>
+        <img src="image1.jpeg" alt="moment gif">
+        <img src="image2.jpeg" alt="photo">
+        <img src="image3.jpeg" alt="photo">
+        <img src="image4.jpeg" alt="photo">
+        <img src="image5.jpeg" alt="photo">
+        <video src="1.mp4" autoplay loop muted></video>
+        <button onclick="showNext('proposal')">Next</button>
+    </div>
+
+    <div id="proposal" class="container hidden">
+        <h2>Sooooo Will You Be My Valentine? 👉👈</h2>
+        <img src="plz.png" alt="">
+        <button id="yesBtn" onclick="showNext('celebration')">Yes</button>
+        <button id="noBtn" onmouseover="moveNoButton()">No</button>
+    </div>
+
+    <div id="celebration" class="container hidden">
+        <h2>SO! You're Interested! 😼😼😼😼 🎉</h2>
+        <video src="sonic.mp4" autoplay loop muted playsinline></video>
+        <button onclick="showNext('thankYou')">Next</button>
+    </div>
+
+    <div id="thankYou" class="container hidden">
+        <h2>Thank You for Staying With Me! 💖</h2>
+        <h2>Here's to these 6 months and many more 😘😘😘</h2>
+        <img src="image6.jpeg" alt="thank you photo">
+        <img src="image7.jpeg" alt="thank you photo">
+        <img src="image8.jpeg" alt="thank you photo">
+        <h3>This is me btw</h3>
+        <video src="hapi.mp4" autoplay muted></video>
+        <br>
+        <h3>Also me</h3>
+        <video src="me.mp4" autoplay loop muted></video>
+    </div>
+
+    <script>
+        function showNext(section) {
+            document.querySelectorAll('.container').forEach(div => div.classList.add('hidden'));
+            document.getElementById(section).classList.remove('hidden');
+        }
+
+        function moveNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = Math.random() * (window.innerWidth - 50) + 'px';
+            noBtn.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+        }
+    </script>
+</body>
+</html>
